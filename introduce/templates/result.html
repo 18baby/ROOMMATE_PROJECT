@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>결과 페이지</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        
+    </style>
+</head>
+    
+<body>
+    <!-- Start your project here-->
+    <!--페이지 메인 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #036B3F;">
+            <a class="navbar-brand" href="/">KUL matching hat</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggler">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">시작</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servey">설문</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">결과</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">서비스 개요</a>
+                        <div class="dropdown-menu dropdown-primary"
+                             aria-labelledby="dropdown">
+                            <a class="dropdown-item" href="/qna">QnA</a>
+                            <a class="dropdown-item" href="/creator">만든이</a>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>
+        </nav> 
+    </header>
+    
+    <main>
+        <div class="new-container mt-5">
+            <div class="row">
+                {% for one_user in show_users %}
+                    <div class="new-card">
+                        <div class="view overlay">
+                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(72).jpg" class="card-img-4-circle">
+                        </div>
+                        <div class="card-body"> 
+                            <h4 class="card-title">
+                                <h4>email</h4>
+                                {{one_user['email']}}
+                                <br>
+                            </h4>       
+                            <p class="card-text">
+                                {% for category in ['age', 'sex', 'dorm_select', 'college_of', 'personality', 'weekend_stay', 'weekday_stay', 'smoke', 
+                                'alchol', 'm_how_eat', 'how_eat_in', 'wake_up', 'm_sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone'] %}
+                                    <h6 style="font-size: 20px">{{category}}</h6>
+                                    {{one_user[category]}}
+                                    <br><br>
+                                {% endfor %}
+                            </p>
+                            
+                        </div>
+                    </div> 
+                {% endfor %}     
+            </div>  
+        </div>
+    </main>
+            
+    <!-- End your project here-->
+    
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='css/bootstrap.min.css') }}"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+  
+</body>
+</html>

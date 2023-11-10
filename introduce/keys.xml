@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="DATABASE_URI">mysql+pymysql://joonmo:os2window@localhost/users</string>
+    <string name="SECRET_KEY">"my super secret key"</string>
+</resources>

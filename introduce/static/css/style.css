@@ -1,0 +1,51 @@
+@import url("http://fonts.googleapis.com/css?family=Nanum+Gothic");
+
+* {
+    font-family:'Nanum Gothic' !important;
+}
+
+.new-card{
+    padding: 1em .5em .5em .5em;
+    /*text-align: center; */
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-4-circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.card-img-3-circle{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.form-container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em 1.5em 1.5em 1.5em;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
+
+.enter-button {
+    height:20px;
+    width: 100px;
+    background-color: #21BA31; 
+    border-radius: 10px; 
+}
+
+
+.new-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

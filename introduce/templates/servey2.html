@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>설문 페이지</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        
+    </style>
+</head>
+    
+<body>
+    <!-- Start your project here-->
+    <!--페이지 메인 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #036B3F;">
+            <a class="navbar-brand" href="/">KUL matching hat</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggler">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">시작</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">설문</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">결과</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">서비스 개요</a>
+                        <div class="dropdown-menu dropdown-primary"
+                             aria-labelledby="dropdown">
+                            <a class="dropdown-item" href="/qna">QnA</a>
+                            <a class="dropdown-item" href="/creator">만든이</a>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>
+        </nav> 
+    </header>
+    
+    <main>
+        <div class="container mt-5">
+            <form method="POST" action="/servey2" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <!--이메일 중복 시 오류 메세지-->
+                <h3>{{ error_msg }}</h3>
+                <br>
+                <h1>
+                    본인이 원하는 룸메이트의 특성을 입력해 주세요
+                </h1><br>
+                <p>
+                    <!--사용자 입력 데이터 확인용 (이거 왜 출력 안됨??)-->
+                    {{user_data}}
+                </p>
+                
+                <ol>
+                    <!--원하는 나이대 ~ 성격-->
+                    {% for category in ['w_age_range', 'w_diff_college_of', 'w_personality', 'w_weekend_stay', 'w_weekday_stay', 'w_smoke', 'w_alcohol', 'w_how_eat', 
+                    'w_how_eat_in', 'w_wake_up', 'w_sleep', 'w_sleep_sensitive', 'w_sleep_habit', 'w_clean_period', 'w_shower_timezone'] %}
+                    <li>
+                        {{ form[category].label(class="form-label") }}
+                        <br>
+
+                        {% for subfield in form[category] %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                            
+                            <!--{% for error in form[category].errors %}
+                              {{ error }}
+                            {% endfor %}-->
+                            
+                        </tr>
+                        {% endfor %}
+
+                    </li>
+                    {% endfor %}
+                    
+                </ol>
+                
+                {{ form.w_focus_text.label(class="form-label") }}
+                <br>
+                {{ form.w_focus_text(class="form-control") }}
+                <!--제출-->
+                <br><br>
+                {{ form.submit(class="btn btn-primary") }}
+
+            </form>
+        </div>
+    </main>
+    <!-- End your project here-->
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='css/bootstrap.min.css') }}"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+  
+</body>
+</html>

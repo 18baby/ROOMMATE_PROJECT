@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>설문 페이지</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        
+    </style>
+</head>
+    
+<body>
+    <!-- Start your project here-->
+    <!--페이지 메인 영역 -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #036B3F;">
+            <a class="navbar-brand" href="/">KUL matching hat</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggler">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">시작</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">설문</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">결과</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown">서비스 개요</a>
+                        <div class="dropdown-menu dropdown-primary"
+                             aria-labelledby="dropdown">
+                            <a class="dropdown-item" href="/qna">QnA</a>
+                            <a class="dropdown-item" href="/creator">만든이</a>
+                        </div>
+                    </li>
+                        
+                </ul>
+            </div>
+        </nav> 
+    </header>
+    
+    <main>
+        <div class="container mt-5">
+            <form action="/servey" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <!--이메일 중복 시 오류 메세지-->
+                <h3>{{ error_msg }}</h3>
+                <br>
+                
+                <ol>
+                    <!--이메일-->
+                    <li>
+                        
+                        {{ form.email.label(class="form-label") }}
+                        <br>
+                        {{ form.email(class="form-control") }}
+                        <br>
+                    </li>
+
+                    <!--성별-->
+                    <li>
+                        
+                        {{ form.sex.label(class="form-label") }}
+                        <br>
+
+                        {% for subfield in form.sex %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                        {% endfor %}
+                        <br>
+
+                    </li>
+
+                    <!--나이-->
+                    <li>
+                        
+                        {{ form.age.label(class="form-label") }}
+                        <br>
+                        {{ form.age(class="form-control") }}
+                        <br>
+                    </li>
+
+                    <!--레이크홀 여부-->
+                    <li>
+                        
+                        {{ form.dorm_select.label(class="form-label") }}
+                        <br>
+
+                        {% for subfield in form.dorm_select %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                        {% endfor %}
+                        <br>
+                    </li>
+
+                    <!--단과대-->
+                    <li>
+                        
+                        {{ form.college_of.label(class="form-label") }}
+                        <br>
+                        {{ form.college_of() }}
+                        <br><br>
+                    </li>
+
+                    <!--성격 ~ 샤워 시간대-->
+
+                    {% for category in ['personality', 'weekend_stay', 'weekday_stay', 'smoke', 'alcohol', 'm_how_eat', 'how_eat_in', 
+                    'wake_up', 'm_sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone'] %}
+                    <li>
+                        {{ form[category].label(class="form-label") }}
+                        <br>
+                        {% for subfield in form[category] %}
+                        <tr>
+                            <td>{{ subfield }}</td>
+                            <td>{{ subfield.label }}</td>
+                        </tr>
+                        {% endfor %}
+                        <br>
+
+                    </li>
+                    {% endfor %}
+                </ol>
+                
+               
+                <!--제출-->
+                <br>
+                {{ form.submit(class="btn btn-primary") }}
+
+            </form>
+        </div>
+    </main>
+    <!-- End your project here-->
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='css/bootstrap.min.css') }}"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+  
+</body>
+</html>

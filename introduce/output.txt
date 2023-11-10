@@ -1,0 +1,713 @@
+Index(['email', 'sex', 'age', 'dorm_select', 'college_of', 'personality',
+       'weekend_stay', 'weekday_stay', 'smoke', 'alchol', 'm_how_eat',
+       'how_eat_in', 'wake_up', 'm_sleep', 'sleep_sensitive', 'sleep_habit',
+       'clean_period', 'shower_timezone', 'w_age_range', 'w_diff_college_of',
+       'w_personality', 'w_weekend_stay', 'w_weekday_stay', 'w_smoke',
+       'w_alchol', 'w_how_eat', 'w_how_eat_in', 'w_wake_up', 'w_sleep',
+       'w_sleep_sensitive', 'w_sleep_habit', 'w_clean_period',
+       'w_shower_timezone'],
+      dtype='object')
+(191, 33)
+DB 확인
+['sex', 'age', 'dorm_select', 'college_of', 'personality', 'weekend_stay', 'weekday_stay', 'smoke', 'alchol', 'm_how_eat', 'how_eat_in', 'wake_up', 'm_sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone']
+smoke 클러스터
+클러스터 번호0
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 2
+age 확인
+age의 값 개수: 7, 전체 데이터 최빈값: 2
+   index  count
+0      2     13
+1      5      7
+2      4      7 age
+확정값 4
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+college_of 확인
+college_of의 값 개수: 12, 전체 데이터 최빈값: 2
+   index  count
+0      5      9
+1      3      6
+2      4      6 college_of
+확정값 5
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     20
+1      1     16
+2      3      6 m_how_eat
+확정값 1
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     24
+1      1     12
+2      3      6 wake_up
+확정값 1
+m_sleep 확인
+m_sleep의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     24
+1      3     13
+2      1      5 m_sleep
+확정값 3
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      3     31
+1      1      7
+2      2      4 sleep_habit
+확정값 3
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     28
+1      1     10
+2      3      4 clean_period
+확정값 2
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+smoke 클러스터
+클러스터 번호1
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 2
+age 확인
+age의 값 개수: 9, 전체 데이터 최빈값: 2
+   index  count
+0      4      8
+1      1      8
+2      2      8 age
+확정값 4
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+college_of 확인
+college_of의 값 개수: 12, 전체 데이터 최빈값: 2
+   index  count
+0      7      9
+1      4      6
+2     11      5 college_of
+확정값 7
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+smoke 확인
+smoke의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      1     19
+1      2     15
+2      3      7 alchol
+확정값 2
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1     19
+1      2     17
+2      3      5 m_how_eat
+확정값 1
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1     19
+1      2     16
+2      3      6 wake_up
+확정값 1
+m_sleep 확인
+m_sleep의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      1     21
+1      3     12
+2      2      8 sleep_habit
+확정값 1
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     20
+1      1     16
+2      3      5 clean_period
+확정값 1
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+smoke 클러스터
+클러스터 번호2
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 1
+age 확인
+age의 값 개수: 7, 전체 데이터 최빈값: 2
+   index  count
+0      5      6
+1      7      2
+2      6      2 age
+확정값 5
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+college_of 확인
+college_of의 값 개수: 6, 전체 데이터 최빈값: 2
+   index  count
+0      2      7
+1     11      4
+2      8      1 college_of
+확정값 11
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      1     11
+1      2      3
+2      3      1 alchol
+확정값 1
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     10
+1      1      3
+2      3      2 m_how_eat
+확정값 2
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      6
+1      3      6
+2      1      3 wake_up
+확정값 3
+m_sleep 확인
+m_sleep의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 3
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      1      7
+1      3      5
+2      2      3 sleep_habit
+확정값 1
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      9
+1      1      5
+2      3      1 clean_period
+확정값 1
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+smoke 클러스터
+클러스터 번호3
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 1
+age 확인
+age의 값 개수: 8, 전체 데이터 최빈값: 2
+   index  count
+0      5     10
+1      7      4
+2      4      3 age
+확정값 5
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+college_of 확인
+college_of의 값 개수: 9, 전체 데이터 최빈값: 2
+   index  count
+0      2      9
+1      7      4
+2     12      3 college_of
+확정값 2
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      1     18
+1      2      5
+2      3      1 alchol
+확정값 1
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     14
+1      1      5
+2      3      5 m_how_eat
+확정값 2
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 4, 전체 데이터 최빈값: 2
+   index  count
+0      2     14
+1      3      5
+2      1      4 wake_up
+확정값 2
+m_sleep 확인
+m_sleep의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     19
+1      3      3
+2      1      2 m_sleep
+확정값 2
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      1     14
+1      2      5
+2      3      5 sleep_habit
+확정값 1
+clean_period 확인
+clean_period의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+smoke 클러스터
+클러스터 번호4
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 1
+age 확인
+age의 값 개수: 9, 전체 데이터 최빈값: 2
+   index  count
+0      1      8
+1      4      6
+2      2      6 age
+확정값 1
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+college_of 확인
+college_of의 값 개수: 9, 전체 데이터 최빈값: 2
+   index  count
+0      2     13
+1      7      5
+2      1      4 college_of
+확정값 2
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      1     21
+1      2     10
+2      3      2 alchol
+확정값 1
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     12
+1      3     11
+2      1     10 m_how_eat
+확정값 3
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     20
+1      1      9
+2      3      4 wake_up
+확정값 2
+m_sleep 확인
+m_sleep의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      3     19
+1      2     10
+2      1      4 sleep_habit
+확정값 2
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2     23
+1      1      8
+2      3      2 clean_period
+확정값 2
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+smoke 클러스터
+클러스터 번호5
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 1
+age 확인
+age의 값 개수: 4, 전체 데이터 최빈값: 2
+   index  count
+0      5      3
+1      2      2
+2      1      1 age
+확정값 5
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+college_of 확인
+college_of의 값 개수: 7, 전체 데이터 최빈값: 2
+   index  count
+0      4      1
+1      2      1
+2      3      1 college_of
+확정값 4
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      2      4
+1      1      2
+2      3      1 alchol
+확정값 2
+m_how_eat 확인
+m_how_eat의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1      4
+1      3      2
+2      2      1 wake_up
+확정값 1
+m_sleep 확인
+m_sleep의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      4
+1      1      2
+2      3      1 m_sleep
+확정값 1
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 2, 전체 데이터 최빈값: 3
+확정값 3
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      3
+1      1      3
+2      3      1 clean_period
+확정값 1
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+smoke 클러스터
+클러스터 번호6
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 2
+age 확인
+age의 값 개수: 4, 전체 데이터 최빈값: 2
+   index  count
+0      4      1
+1      0      1
+2      2      1 age
+확정값 4
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+college_of 확인
+college_of의 값 개수: 4, 전체 데이터 최빈값: 2
+   index  count
+0      4      1
+1      5      1
+2      7      1 college_of
+확정값 4
+personality 확인
+personality의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 1
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+alchol 확인
+alchol의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+m_how_eat 확인
+m_how_eat의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 2
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      2
+1      3      1
+2      1      1 wake_up
+확정값 1
+m_sleep 확인
+m_sleep의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 2, 전체 데이터 최빈값: 3
+확정값 3
+clean_period 확인
+clean_period의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 3
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+smoke 클러스터
+클러스터 번호7
+sex 확인
+sex의 값 개수: 1, 전체 데이터 최빈값: 2
+확정값 2
+age 확인
+age의 값 개수: 7, 전체 데이터 최빈값: 2
+   index  count
+0      1      6
+1      3      4
+2      2      4 age
+확정값 1
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+college_of 확인
+college_of의 값 개수: 10, 전체 데이터 최빈값: 2
+   index  count
+0     11      5
+1      2      4
+2     10      3 college_of
+확정값 11
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+smoke 확인
+smoke의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+alchol 확인
+alchol의 값 개수: 3, 전체 데이터 최빈값: 1
+   index  count
+0      1     12
+1      2      4
+2      3      4 alchol
+확정값 1
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1      9
+1      2      8
+2      3      3 m_how_eat
+확정값 1
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+m_sleep 확인
+m_sleep의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 3
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      1      9
+1      3      7
+2      2      4 sleep_habit
+확정값 1
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1     10
+1      2      6
+2      3      4 clean_period
+확정값 1
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+smoke 클러스터
+클러스터 번호8
+sex 확인
+sex의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+age 확인
+age의 값 개수: 5, 전체 데이터 최빈값: 2
+   index  count
+0      5      1
+1      7      1
+2      4      1 age
+확정값 5
+dorm_select 확인
+dorm_select의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+college_of 확인
+college_of의 값 개수: 4, 전체 데이터 최빈값: 2
+   index  count
+0     11      2
+1      3      1
+2     12      1 college_of
+확정값 11
+personality 확인
+personality의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekend_stay 확인
+weekend_stay의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+weekday_stay 확인
+weekday_stay의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+smoke 확인
+smoke의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 2
+alchol 확인
+alchol의 값 개수: 2, 전체 데이터 최빈값: 1
+확정값 2
+m_how_eat 확인
+m_how_eat의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      3
+1      1      1
+2      3      1 m_how_eat
+확정값 2
+how_eat_in 확인
+how_eat_in의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
+wake_up 확인
+wake_up의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 1
+m_sleep 확인
+m_sleep의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      1      3
+1      3      1
+2      2      1 m_sleep
+확정값 1
+sleep_sensitive 확인
+sleep_sensitive의 값 개수: 1, 전체 데이터 최빈값: 1
+확정값 1
+sleep_habit 확인
+sleep_habit의 값 개수: 3, 전체 데이터 최빈값: 3
+   index  count
+0      1      2
+1      3      2
+2      2      1 sleep_habit
+확정값 1
+clean_period 확인
+clean_period의 값 개수: 3, 전체 데이터 최빈값: 2
+   index  count
+0      2      3
+1      1      1
+2      3      1 clean_period
+확정값 2
+shower_timezone 확인
+shower_timezone의 값 개수: 2, 전체 데이터 최빈값: 2
+확정값 2
