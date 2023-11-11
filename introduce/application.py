@@ -248,25 +248,28 @@ def servey2():
         print(request.form.get('w_focus_text'))    #추가정보 입력한 값(연결 필요!!!!!!!)
         input_additional_sentence=request.form.get('w_focus_text')
         ########################
-        tokenized_list=make_okt_token(input_additional_sentence)
-        ret_list, no_keys_list=return_words(tokenized_list, rd)
+        if input_additional_sentence=='':
+            add_info=[]
+        else:
+            tokenized_list=make_okt_token(input_additional_sentence)
+            ret_list, no_keys_list=return_words(tokenized_list, rd)
+            
+            if len(no_keys_list)!=0:
+                nlp_res=make_nlp_predict(no_keys_list)
+            
+            key_list=[]
+            for no_key in no_keys_list:
+                key_list.extend(nlp_res[no_key])
+            print(key_list)
+            weight, word=split_list(key_list)
+            
+            print("코랩결과물####", tokenized_list, ret_list, no_keys_list, word)
+            add_info=ret_list+word
         
-        if len(no_keys_list)!=0:
-           nlp_res=make_nlp_predict(no_keys_list)
-        
-        key_list=[]
-        for no_key in no_keys_list:
-           key_list.extend(nlp_res[no_key])
-        print(key_list)
-        weight, word=split_list(key_list)
-        
-        print("코랩결과물####", tokenized_list, ret_list, no_keys_list, word)
-        add_info=ret_list+word
-        
-        # 중복으로 나타난 특성을 제거하는 부분
-        add_info = list(set(add_info))
-        
-        #add_info=['alchol']
+            # 중복으로 나타난 특성을 제거하는 부분
+            add_info = list(set(add_info))
+            
+            #add_info=['alchol']
         print("추가정보", add_info)
         
         #DB에 저장
