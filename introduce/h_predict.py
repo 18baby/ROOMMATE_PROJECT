@@ -224,6 +224,8 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
                 sub_df[sub_df['w_how_eat']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
             elif feat_word == "college_of":
                 sub_df[sub_df['w_diff_college_of']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+            elif feat_word == "age":
+                sub_df[sub_df['w_age_range']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
             else:
                 sub_df[sub_df[f'w_{feat_word}']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
             
