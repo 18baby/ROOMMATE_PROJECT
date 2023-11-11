@@ -68,7 +68,7 @@
                             <p class="card-text">
                                 {% for category in ['age', 'sex', 'dorm_select', 'college_of', 'personality', 'weekend_stay', 'weekday_stay', 'smoke', 
                                 'alchol', 'm_how_eat', 'how_eat_in', 'wake_up', 'm_sleep', 'sleep_sensitive', 'sleep_habit', 'clean_period', 'shower_timezone'] %}
-                                    <h6 style="font-size: 20px">{{category}}</h6>
+                                    <h6 style="font-size: 20px">{{show_ment[category]}}</h6>
                                     {{one_user[category]}}
                                     <br><br>
                                 {% endfor %}
