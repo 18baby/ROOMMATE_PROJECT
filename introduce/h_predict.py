@@ -204,9 +204,11 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
              'sleep_habit': 4.0514, 'clean_period': 10.0, 'shower_timezone': 4.3291}
     
     if add_info == []:
-        df_list['distance'] = get_distnace_df(sub_df, new_info)
-        res = df_list
-        res = res.sort_values(by='distance', ascending=False)
+        df_list[0]['distance'] = get_distnace_df(df_list[0], new_info)
+        res = df_list[0].copy()
+        res = res.sort_values(by='distance', ascending=True)
+        res['idx'] = res.index
+        candidates = res.iloc[0:4, -1].tolist()
 
 
     else:
@@ -233,10 +235,11 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
 
         # penalty로 보정된 거리 계산, 후보 4인을 리스트로 생성
         res['distance_fixed'] = res['distance'] + (res['count'] * penalty)
-        res = res.sort_values(by='distance_fixed', ascending=False)
+        res = res.sort_values(by='distance_fixed', ascending=True)
+        candidates = res.iloc[0:4, -4].tolist()
 
+    print(res)
     #display(res)
-    candidates = res.iloc[0:4, -4].tolist()
     return candidates
 
 # 출력 한국어 변환

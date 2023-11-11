@@ -19,7 +19,7 @@ rd = init_dict()
 app = Flask(__name__)      # 서버 생성
 csrf = CSRFProtect(app)    # form이 제대로 전송되었는지 확인
 
-COLAB_URL="http://d534-34-91-12-247.ngrok.io"    #코랩 재연결 시 바꾸기!!
+COLAB_URL="http://5cb8-34-68-247-235.ngrok.io"    #코랩 재연결 시 바꾸기!!
 COLAB_API_URL_NLP=COLAB_URL+"/predict"    #코랩 연결
 COLAB_API_URL_OKT=COLAB_URL+"/okt_tokenize" 
  
