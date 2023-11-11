@@ -19,7 +19,7 @@
 혹시,0.6836+m_sleep,0.5902+sleep_sensitive,0.5241+sleep_habit
 연락,,,
 학기,0.535+m_sleep,,
-취침,1.0+m_sleep,0.6647+sleep_habit,0.5611+college_of
+취침,1.0+m_sleep,0.6647+sleep_habit,
 벌레,0.6143+sleep_habit,,
 상관,0.6815+m_sleep,0.5643+dorm_select,0.5484+college_of
 보통,0.6992+weekday_stay,0.5064+sleep_sensitive,
@@ -50,7 +50,7 @@
 보고,,,
 이면,,,
 계속,0.5344+m_sleep,,
-과대,0.8104+college_of,0.6787+sleep_habit,0.6667+m_sleep
+과대,0.8104+college_of,
 소개,,,
 경우,,,
 관심,0.504+m_sleep,,
@@ -85,7 +85,7 @@
 배정,0.8279+m_sleep,0.5837+weekday_stay,0.5585+sleep_habit
 노력,0.5652+m_sleep,,
 이제,,,
-거주,0.8234+dorm_select,0.5008+sleep_sensitive,
+거주,0.6345+weekend_stay,0.6141+weekday_stay,
 방학,0.508+m_sleep,,
 유지,0.5758+m_sleep,,
 오늘,,,
@@ -209,7 +209,7 @@
 새끼,0.7178+sleep_habit,0.6607+m_sleep,0.5881+college_of
 여러분,0.538+sleep_sensitive,,
 쿠폰,0.6234+sleep_habit,0.5288+college_of,0.5237+m_sleep
-흡연,1.0+smoke,0.5298+alchol,
+흡연,1.0+smoke,,
 청소,1.0+clean_period,,
 학번,0.5605+weekday_stay,0.5479+m_sleep,
 레이크,0.5087+sleep_habit,,
@@ -219,24 +219,24 @@
 아침,,,
 화장실,0.5392+shower_timezone,0.5349+clean_period,
 편이,0.7082+m_sleep,0.6051+weekday_stay,0.5608+college_of
-잠버릇,1.0+sleep_habit,0.6647+m_sleep,0.5485+college_of
+잠버릇,1.0+sleep_habit,,
 알람,0.6048+m_sleep,0.582+sleep_habit,0.5329+sleep_sensitive
 소리,0.5701+m_sleep,0.5308+sleep_habit,
 공부,,,
 잠귀,0.8406+sleep_habit,0.6986+m_sleep,0.5381+college_of
 코골,0.557+sleep_habit,,
-샤워,1.0+shower_timezone,0.5516+wake_up,0.5342+sleep_habit
-기상,1.0+wake_up,0.5516+shower_timezone,
+샤워,1.0+shower_timezone,,
+기상,1.0+wake_up,,
 본가,0.5044+sleep_sensitive,,
 친구,,,
-나이,1.0+age,0.5216+m_sleep,
+나이,1.0+age,
 새벽,0.7425+sleep_habit,0.6449+m_sleep,0.5475+college_of
 저녁,0.5839+m_how_eat,0.5009+weekend_stay,
 음식,0.8818+m_how_eat,0.5301+college_of,0.516+alchol
 시험,,,
 냄새,,,
 예정,0.5434+m_sleep,,
-주말,1.0+weekend_stay,0.5048+weekday_stay,
+주말,1.0+weekend_stay,
 신경,0.6157+m_sleep,,
 게임,,,
 선호,0.5297+m_sleep,,
@@ -250,7 +250,7 @@
 패턴,,,
 가요,0.6295+sleep_sensitive,0.5906+m_sleep,0.5755+age
 취미,,,
-담배,0.9605+smoke,0.5991+alchol,0.5004+m_sleep
+담배,0.9605+smoke,
 공간,0.5162+dorm_select,,
 학년,0.5823+age,,
 운동 ,0.522+m_sleep,,
@@ -267,9 +267,9 @@
 쓰레기,0.7794+clean_period,,
 노래,0.5125+alchol,,
 희망사항,,,
-이갈이,0.6191+sleep_habit,0.5816+college_of,0.5567+sleep_sensitive
+이갈이,0.6191+sleep_habit,0.5567+sleep_sensitive,
 매일,0.7835+weekday_stay,0.6109+weekend_stay,
-잠꼬대,0.8286+sleep_habit,0.6529+m_sleep,0.5718+college_of
+잠꼬대,0.8286+sleep_habit,,
 바닥,,,
 환기,0.5801+smoke,0.5499+shower_timezone,0.5471+sleep_habit
 물건,,,
@@ -312,10 +312,10 @@
 청결,0.9518+clean_period,,
 대화,,,
 인스타,0.7129+m_sleep,0.6398+sleep_sensitive,0.6329+college_of
-식사,1.0+m_how_eat,0.6107+alchol,0.5238+m_sleep
+식사,1.0+m_how_eat,,
 일어나서,0.5313+m_sleep,,
 알정,0.6967+m_sleep,0.6087+sleep_sensitive,0.5652+weekday_stay
-평일,1.0+weekday_stay,0.5465+college_of,0.5148+m_sleep
+평일,1.0+weekday_stay,
 씹덕,0.6276+sleep_habit,0.6255+m_sleep,0.6108+sleep_sensitive
 경영,,,
 수면,0.6257+m_sleep,0.5586+sleep_habit,0.5045+weekday_stay
@@ -345,3 +345,5 @@
 활동,,,
 내내,0.5636+m_sleep,,
 방구,0.7567+sleep_habit,0.7208+m_sleep,0.6152+dorm_select
+음주,1.0+alchol,,
+술,1.0+alchol,,

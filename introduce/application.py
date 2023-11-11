@@ -251,8 +251,8 @@ def servey2():
         if input_additional_sentence=='':
             add_info=[]
         else:
-            tokenized_list=make_okt_token(input_additional_sentence)
-            ret_list, no_keys_list=return_words(tokenized_list, rd)
+            tokenized_list=make_okt_token(input_additional_sentence)  # 코랩 형태소 분석기
+            ret_list, no_keys_list=return_words(tokenized_list, rd)   
             
             if len(no_keys_list)!=0:
                 nlp_res=make_nlp_predict(no_keys_list)

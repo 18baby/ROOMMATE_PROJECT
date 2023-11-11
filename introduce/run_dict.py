@@ -124,7 +124,7 @@ if __name__ == '__main__':
     csv_file_path = 'backup.csv'
     rd = init_dict()
 
-    load_path = '/Users/ihongju/Documents/종합설계/secondContainer/dictionary/input.csv'
+    load_path = '/Users/ihongju/Documents/ROOMMATE_PROJECT/dictionary/input.csv'
     df = pd.read_csv(load_path, encoding='utf-8')
 
     df_read(df, rd)

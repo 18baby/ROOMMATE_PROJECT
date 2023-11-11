@@ -98,7 +98,7 @@ def fit_model(DB_df):
     #print(dummy_df.columns)
 
     # 디폴트 가중치 설정
-    default_w = {'sex':50.0, 'age':5.21, 'dorm_select':50.0, 'college_of':1.27, 'personality':4.53, 'weekend_stay':5.76, 
+    default_w = {'sex':1000.0, 'age':5.21, 'dorm_select':1000.0, 'college_of':1.27, 'personality':4.53, 'weekend_stay':5.76, 
                'weekday_stay':6.76, 'smoke':28.47, 'alchol':5.95, 'm_how_eat':0.79, 'how_eat_in':13.54, 'wake_up':17.98, 'm_sleep':26.32, 
                'sleep_sensitive':12.56, 'sleep_habit':5.03, 'clean_period':29.02, 'shower_timezone':6.15, 'w_age_range':1.0,
                'w_diff_college_of':1.0, 'w_personality':1.0, 'w_weekend_stay':1.0, 'w_weekday_stay':1.0, 'w_smoke':1.0, 'w_alchol':1.0,
