@@ -268,6 +268,10 @@ def servey2():
         
             # 중복으로 나타난 특성을 제거하는 부분
             add_info = list(set(add_info))
+            if 'sex' in add_info:
+                add_info.remove('sex')
+            if 'dorm_select' in add_info:
+                add_info.remove('dorm_select')
             
             #add_info=['alchol']
         print("추가정보", add_info)

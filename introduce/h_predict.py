@@ -380,7 +380,7 @@ def model_predict(merge_dict, groups, add_info, group_datas, email, DB_df):
     else:    # 추가 정보 있는 경우
         for i, word in enumerate(add_info):
             # 확인용
-            #print(i, word)
+            print(i, word)
             t_distance[word] = cal_dis(word, group_datas, merge_dict, groups, want_info, my_info, unique_data)
 
     print(t_distance)   # 선택된 클러스터 확인
