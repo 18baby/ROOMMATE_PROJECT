@@ -202,31 +202,38 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
              'weekday_stay': 4.4803, 'smoke': 9.8636, 'alchol': 4.2795, 'm_how_eat': 3.0, 
              'how_eat_in': 6.1615, 'wake_up': 7.2625, 'm_sleep': 9.3305, 'sleep_sensitive': 5.9185, 
              'sleep_habit': 4.0514, 'clean_period': 10.0, 'shower_timezone': 4.3291}
+    
+    if add_info == []:
+        df_list['distance'] = get_distnace_df(sub_df, new_info)
+        res = df_list
+        res = res.sort_values(by='distance', ascending=False)
 
-    for idx, sub_df in enumerate(df_list):
-        feat_word=add_info[idx]   #add_info 추가로 인자 전달
-        feat_option=new_info[add_info[idx]]
-        sub_df['idx'] = sub_df.index
-        #print(sub_df.index)
-        sub_df['distance'] = get_distnace_df(sub_df, new_info)
-        if feat_word == "m_sleep":
-            sub_df[sub_df['w_sleep']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-        elif feat_word == "m_how_eat":
-            sub_df[sub_df['w_how_eat']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-        elif feat_word == "college_of":
-            sub_df[sub_df['w_diff_college_of']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-        else:
-            sub_df[sub_df[f'w_{feat_word}']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+
+    else:
+        for idx, sub_df in enumerate(df_list):
+            feat_word=add_info[idx]   #add_info 추가로 인자 전달
+            feat_option=new_info[add_info[idx]]
+            sub_df['idx'] = sub_df.index
+            #print(sub_df.index)
+            sub_df['distance'] = get_distnace_df(sub_df, new_info)
+            if feat_word == "m_sleep":
+                sub_df[sub_df['w_sleep']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+            elif feat_word == "m_how_eat":
+                sub_df[sub_df['w_how_eat']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+            elif feat_word == "college_of":
+                sub_df[sub_df['w_diff_college_of']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+            else:
+                sub_df[sub_df[f'w_{feat_word}']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
             
-    res = pd.concat(df_list, ignore_index=True)
+        res = pd.concat(df_list, ignore_index=True)
 
-    # idx 열을 기준으로 그룹화하고 count 열을 추가하여 등장 횟수를 계산
-    res['count'] = res.groupby('idx')['idx'].transform('count')
-    res = res.drop_duplicates(subset=['idx'])
+        # idx 열을 기준으로 그룹화하고 count 열을 추가하여 등장 횟수를 계산
+        res['count'] = res.groupby('idx')['idx'].transform('count')
+        res = res.drop_duplicates(subset=['idx'])
 
-    # penalty로 보정된 거리 계산, 후보 4인을 리스트로 생성
-    res['distance_fixed'] = res['distance'] + (res['count'] * penalty)
-    res = res.sort_values(by='distance_fixed', ascending=False)
+        # penalty로 보정된 거리 계산, 후보 4인을 리스트로 생성
+        res['distance_fixed'] = res['distance'] + (res['count'] * penalty)
+        res = res.sort_values(by='distance_fixed', ascending=False)
 
     #display(res)
     candidates = res.iloc[0:4, -4].tolist()
