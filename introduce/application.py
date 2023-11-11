@@ -298,7 +298,11 @@ def result():
     user_data_dict=session.get('user_data_dict', None)
     print("result 받음")
     print(user_data_dict)
-    return render_template("result.html", show_users=user_data_dict)
+    user_ment_dict={'age':'나이', 'sex':'성별', 'dorm_select':'거주 홀 정보', 'college_of': '단과대', 'personality': '성격 유형', 'weekend_stay':'주말 거주 유형', 
+                    'weekday_stay': '평일 거주 유형', 'smoke': '흡연 유무', 'alchol': '음주 정도', 'm_how_eat':'식사 해결 장소', 'how_eat_in': '배달음식',
+                    'wake_up': '평균 기상 시간', 'm_sleep':'평균 취침 시간' , 'sleep_sensitive': '취침시 예민도', 
+                    'sleep_habit': '잠버릇 유무', 'clean_period':'일주일 청소 빈도', 'shower_timezone':'샤워 시간대'}
+    return render_template("result.html", show_users=user_data_dict, show_ment=user_ment_dict)
 
 
 @app.route("/qna", methods=["GET", "POST"])
@@ -351,12 +355,12 @@ def make_nlp_predict(no_keys_list):
 
 if __name__ == "__main__":
     
-    # origin_df = gdb.get_db()
-    # df_email=origin_df.iloc[:, 1]
+    #origin_df = gdb.get_db()
+    #df_email=origin_df.iloc[:, 1]
     # DB_df = pd.read_csv('introduce\main_data.csv', encoding='utf-8')
     # DB_df=origin_df.iloc[:, 2:]
     # DB_df = DB_df.iloc[:191, :]
-    DB_df = pd.read_csv('main_data.csv', encoding='utf-8')
+    DB_df = pd.read_csv('../main_data.csv', encoding='utf-8')
     DB_df = DB_df.iloc[:, 1:]
     label_df = pd.read_csv('label_df.csv',encoding='utf-8')
     label_df = label_df.iloc[: , 1:]
