@@ -19,7 +19,7 @@ rd = init_dict()
 app = Flask(__name__)      # 서버 생성
 csrf = CSRFProtect(app)    # form이 제대로 전송되었는지 확인
 
-COLAB_URL="http://5cb8-34-68-247-235.ngrok.io"    #코랩 재연결 시 바꾸기!!
+COLAB_URL="http://fe97-34-90-243-222.ngrok.io"    #코랩 재연결 시 바꾸기!!
 COLAB_API_URL_NLP=COLAB_URL+"/predict"    #코랩 연결
 COLAB_API_URL_OKT=COLAB_URL+"/okt_tokenize" 
  
@@ -234,7 +234,7 @@ def servey2():
         # # BaseForm에 있는 항목들, 제대로 값이 들어가 있음
         # print("PERSONALITY:",form.personality.data)
         # print("HOW EAT",form.how_eat.data)
-        mate_dict={'w_age_range': form.w_age_range.data, 'w_diff_college_of': form.w_diff_college_of.data, 'w_personality': form.w_personality.data, 
+        mate_dict={'w_age_range': int(form.w_age_range.data), 'w_diff_college_of': form.w_diff_college_of.data, 'w_personality': form.w_personality.data, 
                    'w_weekend_stay': form.w_weekend_stay.data, 'w_weekday_stay': form.w_weekday_stay.data, 'w_smoke': form.w_smoke.data, 
                    'w_alchol': form.w_alcohol.data, 'w_how_eat': form.w_how_eat.data, 'w_how_eat_in': form.w_how_eat_in.data, 
                    'w_wake_up': form.w_wake_up.data, 'w_sleep': form.w_sleep.data, 'w_sleep_sensitive': form.w_sleep_sensitive.data, 

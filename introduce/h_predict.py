@@ -32,7 +32,7 @@ def age_get_index_based_on_string(option, generated_string, alp=1):
         string_part = generated_string.split('-')
         idx=0
 
-        if(option!=5):
+        if(option!=0):
             idx=string_part.index(str(option))   # 인덱스의 위치가 거리이다.
         return (abs(idx*alp))/3
     except:
@@ -134,7 +134,8 @@ def cal_dis(word, group_datas, new_df, groups, want_info, my_info, unique_data):
 
 # 인덱싱 거리계산
 def get_distnace_df(sub_df, new_info):
-    want_info = sub_df.columns[15:30]    #column name(w_)
+    want_info = sub_df.columns[17:32]    #column name(w_)
+    print(f"*** 원하는 정보: {want_info} ***")
     
     # 인덱싱 진행
     distance=[]
@@ -202,7 +203,7 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
              'weekday_stay': 4.4803, 'smoke': 9.8636, 'alchol': 4.2795, 'm_how_eat': 3.0, 
              'how_eat_in': 6.1615, 'wake_up': 7.2625, 'm_sleep': 9.3305, 'sleep_sensitive': 5.9185, 
              'sleep_habit': 4.0514, 'clean_period': 10.0, 'shower_timezone': 4.3291}
-    
+
     if add_info == []:
         df_list[0]['distance'] = get_distnace_df(df_list[0], new_info)
         res = df_list[0].copy()
@@ -216,18 +217,18 @@ def select_candidate(df_list, new_info, add_info, penalty=0.2):
             feat_word=add_info[idx]   #add_info 추가로 인자 전달
             feat_option=new_info[add_info[idx]]
             sub_df['idx'] = sub_df.index
-            #print(sub_df.index)
-            sub_df['distance'] = get_distnace_df(sub_df, new_info)
-            if feat_word == "m_sleep":
-                sub_df[sub_df['w_sleep']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-            elif feat_word == "m_how_eat":
-                sub_df[sub_df['w_how_eat']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-            elif feat_word == "college_of":
-                sub_df[sub_df['w_diff_college_of']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
-            elif feat_word == "age":
-                sub_df[sub_df['w_age_range']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+            eat_word=add_info[idx]   #add_info 추가로 인자 전달
+            change_w_dic={'m_sleep':'w_sleep', 'm_how_eat':'w_how_eat', 'college_of': 'w_diff_college_of', 'age':'w_age_range'}
+            if feat_word in change_w_dic:
+                w_feat_word=change_w_dic[feat_word]
             else:
-                sub_df[sub_df[f'w_{feat_word}']==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
+                w_feat_word=f'w_{feat_word}'
+            print("========")
+            print(f"단어: {feat_word}, 값: {feat_option}")
+            sub_df['distance'] = get_distnace_df(sub_df, new_info)
+            print(f"거리값: {sub_df.loc[:,['idx', 'distance']]}")
+            
+            sub_df[sub_df[w_feat_word]==feat_option]['distance'] -= w_dic[feat_word]  # 입력 변수 가중치  # 입력 변수 가중치
             
         res = pd.concat(df_list, ignore_index=True)
 
